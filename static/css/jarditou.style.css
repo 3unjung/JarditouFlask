@@ -1,0 +1,156 @@
+.betatest {
+    border: solid fuchsia 1px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    background-color:  rgba(38, 166, 91, 0.5);  /* effet transparence des bandes sur le côté */
+}
+
+.green {
+    color: #556B2F;
+}
+
+.main {
+    margin: auto;
+    width: 90%;
+    background-color:  rgba(245, 245, 245, 0.7); /* effet transparence du block principal */
+}
+
+/* HEADER */
+header a:hover {
+    color: white;
+}
+
+/*  Set links navigation */
+.navbar .nav-link {
+    color: #fff;
+}
+
+/* BODY */
+#errors404 p { color: #556B2F;}
+#errors404 h1  {color: green;}
+#comeback404 {color: green; }
+
+
+section h2 { color: green;}
+
+section p {
+    color: #556B2F;
+    font: 1.3em "Fira Sans", sans-serif;
+ }
+
+
+/* FOOTER */
+footer {
+    /* Set the fixed height of the footer here */
+    height: 0px
+}
+
+.footer h5, p, a {
+    color: #fff;
+    font: 1.1em "Fira Sans", sans-serif;
+}
+
+.footer a:hover {
+    color: white;
+    background-color: #556B2F;
+}
+
+.footer-container {
+    background-color: #1c3e00;
+
+}
+
+/* Block Copyright */
+.footer-copyright {
+    display: flex;
+    justify-content: center;
+}
+
+ /* CARDS */
+ .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+
+  text-align: center;
+  font-family: arial;
+  background-color:  rgba(245, 245, 245, 0.3);
+
+/*
+  margin-right: 1%;
+*/
+  padding: 1%;
+}
+.card-img-top {
+    height: 250px;
+    width: 100%;
+}
+ /* EXTRA CARD */
+.card-text{
+    color: black;
+}
+
+.bouton-card{
+    color: black;
+}
+
+.bouton-card img {
+    height: 30px;
+    width: 30px;
+}
+
+.prix-titre {
+    display: flex;
+}
+
+#prix {
+    color: #556B2F;
+}
+
+
+.fab {
+color: white;
+font-size: 35px;
+}
+/* PAGE PRODUIT */
+/*.titre-ref {
+    display: flex;
+}*/
+/*.flex{
+    display: inline-flex;
+}
+
+.left{
+    margin-left: 0;
+}
+
+.width-100
+{
+    width: 100%;
+}
+
+.buy{
+    margin-left: 50%;
+}*/
+
+/*.row{
+    flex-wrap: nowrap;
+}*/
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 700px) {
+    #banner-jarditou {
+        display: none;
+    }
+}
+
+

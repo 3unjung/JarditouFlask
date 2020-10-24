@@ -1,0 +1,15 @@
+{% extends 'layouts/app.jarditou.html' %}
+
+{% block body %}
+
+<div class="container" id="errors404">
+    <div class="text-center">
+        <h1>Error 404</h1>
+        <p>
+            Its seems you are lost, come back from <a id="comeback404" href="{{ url_for('index') }}">home page</a> ?
+        </p>
+        <a href="{{ url_for('index') }}"><img src="static/img/404.logo.jpg" alt="NOT FOUND"></a>
+    </div>
+</div>
+
+{% endblock %}

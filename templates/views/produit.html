@@ -1,0 +1,35 @@
+{% extends 'layouts/app.jarditou.html' %}
+{% block body %}
+
+<div class="container">
+    <!--     <div>
+             {% for post in posts %}
+             <a style="color: black;" href="#"><h1> {{ post.name}} </h1></a>
+                 <p style="color: black;">Description : {{ post.description }}  </p>
+                 <p style="color: black;">Prix : {{ post.prix }} </p>
+             <hr>
+             {% endfor %}
+         </div>-->
+    <div class="row">
+        <div class="col">
+            <a><img class="img-fluid" src="static/img/20.png" alt="Card image cap"></a>
+        </div>
+        <div class="col">
+            <div class="titre-ref">
+                <h2 class="green">Nom du produit </h2>
+                <hr>
+                <h3 class="green">Référence</h3>
+            </div>
+            <hr>
+            <h4 class="green">Á propos </h4>
+            <hr>
+            <h4 class="green">Prix </h4>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}
