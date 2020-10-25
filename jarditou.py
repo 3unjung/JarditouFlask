@@ -41,9 +41,9 @@ def register():
 
 @app.route("/espace-personnel", methods=["post", "get"])  # post-login
 def treatment():
-    if request.form == "GET":
-        couriell = request.form["couriell"]
-        mdp = request.form["mdp"]
+    if request.method == "GET":
+        couriell = request.args["couriell"]
+        mdp = request.args["mdp"]
         return render_template("views/traitement.html", couriell=couriell, mdp=mdp)
     else:
         return render_template("views/index.html")
