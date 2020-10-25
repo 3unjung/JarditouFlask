@@ -45,10 +45,9 @@ def treatment():
         couriell = request.form["couriell"]
         mdp = request.form["mdp"]
         print(f"Hello {couriell}, votre mot de passe est le suivant : {mdp}.")
-        return render_template("views/traitement.html")
-
+        return render_template("views/traitement.html", couriell=couriell, mdp=mdp)
     else:
-        return render_template("views/register.html")
+        return render_template("views/traitement.html")
 
 
 @app.errorhandler(404)
