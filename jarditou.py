@@ -1,5 +1,6 @@
 from flask import Flask, render_template, config, request
 from flask_ngrok import run_with_ngrok
+import database
 
 app = Flask(__name__)
 app.config.from_object(config)
@@ -16,7 +17,7 @@ def catalogue():
     return render_template("views/catalogue.html")
 
 
-@app.route("/produit")  # /blog du mec
+@app.route("/produit")  # blog du mec
 def produit():
     posts = [{'name': 'pioche', 'description': 'Casse les cailloux', 'prix': 52},
              {'name': 'mandrin', 'description': 'Fais des trous et des gros', 'prix': 25},
@@ -41,9 +42,12 @@ def register():
 
 @app.route("/espace-personnel", methods=["post", "get"])  # post-login
 def treatment():
-    if request.method == "GET":
-        couriell = request.args["couriell"]
-        mdp = request.args["mdp"]
+    if request.method == "POST":
+        couriell = request.form["couriell"]  # request.args utilisé pour les méthodes GET
+        mdp = request.form["mdp"]
+        cursor = sqlConnection.cursor()
+        cursor.execute("INSERT INTO sujet (couriell, motdepasse);")
+        sqlConnection.commit()
         return render_template("views/traitement.html", couriell=couriell, mdp=mdp)
     else:
         return render_template("views/index.html")
