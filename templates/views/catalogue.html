@@ -3,95 +3,21 @@
 
 <!-- https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png-->
 
-
 <div class="container">
-
     <div class="row">
-        <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/20.png" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-         <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/21.png" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-         <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/16.png" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-         <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/12.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% for allResults in results %}
 
         <div class="col-12 col-sm-8 col-md-6 col-lg-3">
             <div class="card" style="width: 15rem;">
                 <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/12.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="../static/img/{{ allResults['pro_photo'] }}" alt="">
                 </a>
                 <div class="card-body">
                     <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
+                        <h5 style="margin-left: 4%;" class="card-title mr-5">{{ allResults["pro_libelle"] }}</h5>
+                        <p style="margin-left: 13%;" id="prix">{{ allResults["pro_prix"] }}</p>
                     </div>
                     <div class="bouton-card">
                         <a href="#" class="btn btn-success">Ajouter au devis</a>
@@ -102,139 +28,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/12.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/12.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/12.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/12.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/12.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/12.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-sm-8 col-md-6 col-lg-3">
-            <div class="card" style="width: 15rem;">
-                <a href="{{ url_for('produit') }}">
-                    <img class="card-img-top" src="static/img/12.jpg" alt="Card image cap">
-                </a>
-                <div class="card-body">
-                    <div class="prix-titre green">
-                        <h5 style="margin-left: 4%;" class="card-title mr-5">Card title</h5>
-                        <p style="margin-left: 13%;" id="prix">85$</p>
-                    </div>
-                    <div class="bouton-card">
-                        <a href="#" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
-                        <br>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
+
 </div>
 
 
