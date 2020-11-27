@@ -17,16 +17,18 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <!-- <span class="navbar-toggler-icon"></span> /!\ icon boostrap  -->
+                <i class="fa fa-navicon"></i>
+
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" href="/">Accueil <span class="sr-only">(current)</span></a>
                     <a class="nav-link" href="{{ url_for('catalogue') }}">Catalogue</a>
                     <a class="nav-link" href="{{ url_for('register') }}">Mon compte</a>
-<!--
-                    <a class="nav-link" href="{{url_for('produit') }}">Produits</a>
--->
+                    <!--
+                                        <a class="nav-link" href="{{url_for('produit') }}">Produits</a>
+                    -->
 
                 </div>
             </div>

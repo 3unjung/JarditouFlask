@@ -4,25 +4,26 @@
 <div class="container">
     <div class="row">
 
-        {{ for infos in details }}
+        {% for infos in details %}
 
         <div class="col">
-            <a><img class="img-fluid" src="static/img/20.png" alt="Card image cap"></a>
+            <a href="static/img/{{ infos['pro_photo'] }}" target="_blank"><img class="img-fluid" src="static/img/{{ infos['pro_photo'] }}" alt="Photo du produit {{ infos['pro_libelle'] }} " title="Voir le produit"></a>
         </div>
 
         <div class="col">
             <div class="titre-ref">
-                <h2 class="green">{{ infos['pro_prix'] }}</h2>
+                <h3 class="green">Référence : {{ infos['pro_ref'] }}</h3>
                 <hr>
-                <h3 class="green">Référence</h3>
+                <h2 class="green">{{ infos['pro_prix'] }}</h2>
+
             </div>
             <hr>
-            <h4 class="green">Á propos </h4>
+            <h4 class="green">{{ infos['pro_description'] }}</h4>
             <hr>
-            <h4 class="green">Prix </h4>
+            <h4 class="green">{{ infos['pro_libelle'] }}</h4>
         </div>
 
-        {{ endfor }}
+        {% endfor %}
     </div>
 
 </div>
