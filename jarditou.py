@@ -36,6 +36,11 @@ def register():
     return render_template("views/register.html")
 
 
+@app.route("/redirection/espace-personnel")
+def connexion():
+    return render_template("view/connexion.html")
+
+
 @app.route("/espace-personnel", methods=["post", "get"])  # post-login
 def treatment():
     if request.method == "POST":
