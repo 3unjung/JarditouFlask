@@ -31,14 +31,23 @@ def produit():
     return render_template("views/produit.html", details=details)
 
 
+@app.route("/ajouter-un-nouveau-produit")
+def newProduct():
+    sqlConnection = connexionMysql()
+    cursor = sqlConnection.cursor(dictionary=True)
+    cursor.execute(f"SELECT * from produits")
+    results = cursor.fetchall()
+    return render_template("views/addproduct.html", results=results)
+
+
 @app.route("/inscription")
 def register():
     return render_template("views/register.html")
 
 
-@app.route("/redirection/espace-personnel")
+@app.route("/singin")
 def connexion():
-    return render_template("view/connexion.html")
+    return render_template("views/connexion.html")
 
 
 @app.route("/espace-personnel", methods=["post", "get"])  # post-login

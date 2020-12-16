@@ -1,14 +1,16 @@
 /* Meta class */
 /* Make a visual on the tag */
-.betatest {
-    border: solid fuchsia 1px;
-}
-
+.betatest { border: solid fuchsia 1px;}
+/* Black text*/
+.black {color: black;}
 /* Green text */
-.green {
-    color: #556B2F;
-}
+.green {color: #556B2F;}
+/* Price color */
+.price {color: red;}
 
+#something {
+    text-align: center:
+}
 
 html {
     position: relative;
@@ -73,11 +75,17 @@ section p {
     font: 1.3em "Fira Sans", sans-serif;
  }
 
-/* ------------------------------------------------------------ */
+/* ADD PRODUCT */
+
+------------------------------------------------------------ */
 /* FOOTER */
 footer {
     /* Set the fixed height of the footer here */
     height: 0px
+}
+
+footer h4 {
+    text-align: center;
 }
 
 .footer h5, p, a {
@@ -93,6 +101,11 @@ footer {
 .footer-container {
     background-color: #1c3e00;
 
+}
+
+/* Logos Facebook & Github */
+.fab {
+    font-size: 30px;
 }
 
 /* Block Copyright */
@@ -183,7 +196,6 @@ font-size: 35px;
     #banner-jarditou {
         display: none;
     }
-
 }
 
 

@@ -1,0 +1,49 @@
+{% extends 'layouts/app.jarditou.html' %}
+{% block body %}
+<!-- {{ url_for('register') }} -->
+
+
+<form action="" method="post">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div class="form-group">
+                    <p><label for="libelle">Libelle
+                        <input type="text" name="libelle" class="form-control" id="libelle">
+                    </label></p>
+                </div>
+
+                <div class="form-group">
+                    <select class="col-4 custom-select form-control" name="categorie" id="categorie">
+
+                        {% for reference in results %}
+
+                        <option value="{{ reference['pro_ref']}}">{{ reference['pro_ref']}}</option>
+
+                        {% endfor %}
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="form-group">
+                    <p><label for="price">Prix du produit
+                        <input type="number" name="price" class="form-control" id="price">
+                    </label></p>
+                </div>
+
+                <div class="form-group">
+                    <p><label for="quantite">Quantité en stock
+                        <input type="number" name="quantite" class="form-control" id="quantite">
+                    </label></p>
+                </div>
+            </div>
+
+
+        </div> <!-- END TAG ROW -->
+    </div>
+
+</form>
+{% endblock %}

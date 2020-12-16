@@ -12,17 +12,16 @@
 
         <div class="col">
             <div class="titre-ref">
-                <h3 class="green">Référence : {{ infos['pro_ref'] }}</h3>
+                <h4 class="black" >{{ infos['pro_libelle'] }} (ref: {{ infos['pro_ref'] }})</h4>
                 <hr>
-                <h2 class="green">{{ infos['pro_prix'] }}</h2>
-
+                <h5 class="black"><strong>Payer:</strong><span class="price"> {{ infos['pro_prix'] }} $</span></h5>
             </div>
-            <hr>
-            <h4 class="green">{{ infos['pro_description'] }}</h4>
-            <hr>
-            <h4 class="green">{{ infos['pro_libelle'] }}</h4>
-        </div>
 
+            <hr>
+            <h5 class="black"><span>• {{ infos['pro_description'] }}</span></h5>
+            <hr>
+
+        </div>
         {% endfor %}
     </div>
 
