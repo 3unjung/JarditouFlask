@@ -21,12 +21,11 @@ def catalogue():
     return render_template("views/catalogue.html", results=results)
 
 
-@app.route("/page-produit")
-def produit():
-    id = request.args['id']
+@app.route("/<libelle>")
+def produit(libelle):
     sqlConnection = connexionMysql()
     cursor = sqlConnection.cursor(dictionary=True)
-    cursor.execute(f"SELECT * from produits where pro_id={id};")
+    cursor.execute(f"SELECT * from produits where pro_libelle='{libelle}';")
     details = cursor.fetchall()
     return render_template("views/produit.html", details=details)
 

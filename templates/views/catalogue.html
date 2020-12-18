@@ -11,7 +11,7 @@
 
         <div class="col-12 col-sm-8 col-md-4 col-lg-3">
             <div class="card" style="width: 15rem;">
-                <a href="/page-produit?id={{ allResults['pro_id'] }}">
+                <a href="/{{allResults['pro_libelle']}}?ref={{allResults['pro_ref']}}?color={{allResults['pro_couleur']}}">
                     <img class="card-img-top" src="../static/img/{{ allResults['pro_photo'] }}" alt="">
                 </a>
                 <div class="card-body">
