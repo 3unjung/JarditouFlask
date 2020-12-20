@@ -3,31 +3,35 @@
 <!-- {{ url_for('register') }} -->
 
 
-<form action="" method="post">
+<form action="{{ url_for('newProduct') }}" method="post">
+
 
     <div class="container">
         <div class="row">
-            <div class="col-8">
-                <div class="form-group">
-                    <p><label for="libelle">Libelle
+            <div class="col-6 form1">
+
+                <div class="flex-form">
+                    <p><label for="libelle">Libelle:
                         <input type="text" name="libelle" class="form-control" id="libelle" placeholder="Nom du produit">
                     </label></p>
                 </div>
 
                 <div class="form-group">
-                    <select class="col-4 custom-select form-control" name="categorie" id="categorie">
-
-                        {% for reference in results %}
-
-                        <option value="{{ reference['pro_ref']}}">{{ reference['pro_ref']}}</option>
-
-                        {% endfor %}
-
-                    </select>
+                    <p><label for="reference">Référence:<input type="text" name="reference" class="form-control" id="reference" placeholder="Référence produit"></label></p>
                 </div>
+
+                    <div class="form-group">
+                        <label for="categories">Catégories:</label>
+                            <select class="col-4 custom-select form-control" name="categorie" id="categorie">
+                            {% for categories in results %}
+                            <option value="{{ categories['cat_id']}}">{{ categories['cat_nom']}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
             </div>
 
-            <div class="col-4">
+            <div class="col-4 form2">
                 <div class="form-group">
                     <p><label for="price">Prix du produit
                         <input type="number" name="price" class="form-control" id="price" placeholder="Prix unitaire">
@@ -40,9 +44,14 @@
                     </label></p>
                 </div>
             </div>
-
-
         </div> <!-- END TAG ROW -->
+        <br>
+        <p class="green">En créant ce produit, vous acceptez la  <a style="color: black;" href="#">Politique d'utilisaton</a> de Jarditou.
+        <p>
+        <p class="green">Veuillez consulter notre Notice Protection de vos Informations Personnelles, notre Notice
+            Cookies et notre Notice Annonces publicitaires basées sur vos centres d’intérêt.</p>
+            <button type="submit" class="btn btn-success">Créer le produit</button>
+
     </div>
 
 </form>

@@ -15,6 +15,13 @@ def index():
 @app.route("/catalogue")
 def catalogue():
     sqlConnection = connexionMysql()
+
+    """if "delid" in request.args:
+        cursor = sqlConnection.cursor(dictionary=True)
+        delid = request.args["delid"]
+        cursor.execute(f"DELETE FROM produits WHERE pro_id = '{delid}'")
+        sqlConnection.commit()"""
+
     cursor = sqlConnection.cursor(dictionary=True)
     cursor.execute("SELECT * FROM produits")
     results = cursor.fetchall()
@@ -30,12 +37,23 @@ def produit(libelle):
     return render_template("views/produit.html", details=details)
 
 
-@app.route("/ajouter-un-nouveau-produit")
+@app.route("/ajouter-un-nouveau-produit", methods=["post", "get"])
 def newProduct():
     sqlConnection = connexionMysql()
     cursor = sqlConnection.cursor(dictionary=True)
-    cursor.execute(f"SELECT * from produits")
+    cursor.execute(f"SELECT * from categories")
     results = cursor.fetchall()
+
+    if request.method == "POST":
+        libelle = request.form["libelle"]
+        reference = request.form["reference"]
+        category = int(request.form["categorie"])
+        prix = request.form["price"]
+        quantite = request.form["quantite"]
+        cursor = sqlConnection.cursor()
+        cursor.execute(f"INSERT INTO produits (pro_libelle, pro_ref, pro_cat_id, pro_prix, pro_stock) VALUES ('{libelle}', '{reference}', '{category}', '{prix}', '{quantite}');")
+        sqlConnection.commit()
+        return render_template("views/catalogue.html", results=results)
     return render_template("views/addproduct.html", results=results)
 
 
@@ -58,8 +76,7 @@ def treatment():
         cursor = sqlConnection.cursor()
         cursor.execute(f"INSERT INTO sujets (couriell, motdepasse) VALUES ('{couriell}', '{mdp}');")
         sqlConnection.commit()
-
-        return render_template("views/traitement.html", couriell=couriell, mdp=mdp)
+        return render_template("views/catalogue.html")
     else:
         return render_template("views/index.html")
 

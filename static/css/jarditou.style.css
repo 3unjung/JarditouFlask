@@ -36,7 +36,7 @@ body {
 /* ------------------------------------------------------------ */
 /* HEADER */
 footer{
-    border-radius: 75px;
+    border-radius: 10px;
 }
 
 header a:hover {
@@ -143,6 +143,12 @@ footer h4 {
     width: 30px;
 }
 
+/* Extra BOUTON TRASH*/
+.bouton-trash {
+    height: 30px;
+    width: 30px;
+}
+
 .prix-titre {
     display: flex;
 }
@@ -150,6 +156,24 @@ footer h4 {
 #prix {
     color: #556B2F;
 }
+
+/* FORMULAIRE */
+.form-group p {
+    color: #556B2F;
+}
+
+.form1 {
+    margin-right: 100px;
+}
+
+.form1, .form2{
+    border-radius: 10px;
+    border:1px dashed green;
+    background-color: #F5F5F5;
+    padding: 17px;
+}
+
+
 
 /*.fab {
 color: white;

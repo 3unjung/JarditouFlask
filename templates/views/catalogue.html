@@ -1,3 +1,4 @@
+
 {% extends 'layouts/app.jarditou.html' %}
 {% block body %}
 
@@ -6,8 +7,27 @@
 <div class="container">
     <div class="row">
 
+    <script>
+            function ctrlDelete() {
+                var reponse = prompt("Saisissez le mot de passe d'authenfitication:");
+                var mdpnul = "motdepasse";
+
+                if (reponse == mdpnul)
+                {
+                    alert("Authentication réussie");
+                }
+
+                else
+                {
+                    alert("Authentication incorrecte");
+                }
+            }
+
+        </script>
 
         {% for allResults in results %}
+
+
 
         <div class="col-12 col-sm-8 col-md-4 col-lg-3">
             <div class="card" style="width: 15rem;">
@@ -21,7 +41,7 @@
                     </div>
                     <div class="bouton-card">
                         <a href="{{ url_for('newProduct') }}" class="btn btn-success">Ajouter au devis</a>
-                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png"></a>
+                        <a href="#" style="margin-left: 7%;"><img src="static/img/delete.png" onclick="ctrlDelete()"></a>
                         <br>
                     </div>
                 </div>
