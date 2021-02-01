@@ -7,10 +7,10 @@
         {% for infos in details %}
 
         <div class="col">
-            <a href="static/img/{{ infos['pro_photo'] }}" target="_blank"><img class="img-fluid" src="static/img/{{ infos['pro_photo'] }}" alt="Photo du produit {{ infos['pro_libelle'] }} " title="Voir le produit"></a>
+            <a href="static/img/{{ infos['pro_photo'] }}" target="_blank"><img class="img-fluid image-produit" src="static/img/{{ infos['pro_photo'] }}" alt="Photo du produit {{ infos['pro_libelle'] }} " title="Voir le produit"></a>
         </div>
 
-        <div class="col">
+        <div class="col produit ">
             <div class="titre-ref">
                 <h4 class="black" >{{ infos['pro_libelle'] }} (ref: {{ infos['pro_ref'] }})</h4>
                 <hr>
@@ -18,7 +18,9 @@
             </div>
 
             <hr>
+            <h5><strong>À propos de cet article</strong></h5>
             <h5 class="black"><span>• {{ infos['pro_description'] }}</span></h5>
+
             <hr>
 
         </div>
@@ -26,14 +28,11 @@
 
     </div>
 
-
     <diV class="row justify-content-end">
-          <div class="col-2">
-            <a  href="#" style="7%;"><img class="bouton-trash" src="static/img/delete.png" title="Supprimer ce produit" id="delete_product"></a>
-            <a  href="#" style="7%;"><img class="bouton-trash" src="static/img/parameter.png" title="Modifier ce produit"></a>
-        </div>
-
-
+          <div class="col-3 d-flex">
+              <button type="submit" class="btn btn-success">Modifier ce produit</button>
+              <a  href="#" style="7%;"><img class="bouton-trash ml-3" src="static/img/delete.png" title="Supprimer ce produit" id="delete_product"></a>
+          </div>
     </diV>
 
 

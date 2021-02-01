@@ -174,7 +174,16 @@ footer h4 {
 }
 
 
+/* PRODUCT PAGE */
+.image-produit {
+    max-height: 450px;
+    max-width: 450px;
 
+}
+.produit {
+    padding: 15px;
+    background-color: #F5F5F5;
+}
 /*.fab {
 color: white;
 font-size: 35px;

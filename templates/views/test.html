@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+
+<div>
+    <img id="pickme" src="../static/img/pickme.jpg" style="width: 500px; height: 500px;" alt="" onmousemove="zoom(event)">
+</div>
+
+
+<script>
+    function zoom(event) {
+        console.log(event);
+        zoomFactor = 0.5; // Grossissement du zoom
+        div = event.target.parentElement; // Récupère la div parente par rapport à la cible de l'évènnement ( ici le passage de la souris)
+
+        // Vérifie si la largeur de la div est vide
+        if (div.style["max-width"] == "") {
+            console.log(event);
+
+            // La taille de la div n'est pas fixée
+
+           // Récupère les dimensions de l'image déclenchée par la cible de l'évenènement
+            initWidth = event.target.width;
+            initHeight = event.target.height;
+
+            // Applique à notre div les dimensions suivantes
+            div.style["max-width"] = initWidth + "px";
+            div.style["max-height"] = initHeight + "px";
+            div.style["overflow"] = "hidden";
+
+
+            console.log(initWidth, initHeight);
+
+
+            // Applique la taille du zoom sur la largeur et la hauteur de notre cible (donc l'image)
+            event.target.style["width"] = initWidth / zoomFactor + "px";
+            event.target.style["height"] = initHeight / zoomFactor + "px";
+            event.target.style["position"] = "relative";
+
+        }
+
+        // Retourne la position horizontale de la souris dans le viewport
+        posMouseX = event.clientX;
+
+        // Délimite le rectangle (rect) de la div dans le viewport
+        posDivClient = parent.getBoundingClientRect();
+
+        // Retourne le nombre de pixel qu'il y a entre la position horizontale de la souris et le bord gauche de la div
+        position = posMouseX - posDivClient.left;
+
+
+    }
+</script>
+</body>
+</html>
